@@ -103,7 +103,7 @@ async function main(){
     // we assume it was cancelled unless...
     if(job.conclusion != "success"){
       workflow_success = false
-      job_status_icon = "\u2717" // BALLOT X
+      job_status_icon = "\u20dd"
       //job_status_icon = "\u20e0" // COMBINING ENCLOSING CIRCLE BACKSLASH
     }
     // ...the job conclusion is failure, we mark as failed and set the icon
