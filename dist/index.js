@@ -3709,8 +3709,9 @@ async function main() {
     const repo_url = "<https://github.com/" + workflow_run.data.repository.full_name + "|*" + workflow_run.data.repository.full_name + "*>";
     const branch_url = "<https://github.com/" + workflow_run.data.repository.full_name + "/tree/" + branch + "|*" + branch + "*>";
     const workflow_run_url = "<" + workflow_run.data.html_url + "|#" + workflow_run.data.run_number + ">";
+    const commit_message = "<" + workflow_run.data.head_commit.message + "|#" + workflow_run.data.head_commit.message + ">";
     // Example: Success: AnthonyKinson's `push` on `master` for pull_request
-    let status_string = workflow_msg + " " + actor + "'s `" + event + "` on `" + branch_url + "`\n";
+    let status_string = workflow_msg + " " + actor + "'s **" + commit_message + "** `" + event + "` on `" + branch_url + "`\n";
     // Example: Workflow: My Workflow #14 completed in `1m 30s`
     const details_string = "Workflow: " + workflow_name + " " + workflow_run_url + " completed in `" + workflow_duration + "`";
     // Build Pull Request string if required
