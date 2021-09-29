@@ -25,7 +25,8 @@
     "@types/request-promise-native": "^1.0.15",
     "json-parse-even-better-errors": "^2.3.1",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.5",
+    "whatwg-url": "^9.1.0"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
