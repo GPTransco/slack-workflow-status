@@ -57,6 +57,7 @@ async function main(){
   // Collect Action Inputs
   const webhook_url: string = core.getInput('slack_webhook_url', { required: true })
   const github_token: string = core.getInput('repo_token', { required: true })
+  const hide_successful_jobs: string = core.getInput('hide_successful_jobs')
   const include_jobs: string = core.getInput('include_jobs', { required: true })
   const slack_channel: string = core.getInput('channel')
   const slack_name: string = core.getInput('name')
@@ -97,6 +98,8 @@ async function main(){
     }
     // Setup some slack content for job status
     if(job.conclusion == "success"){
+      if(hide_successful_jobs) continue;
+
       job_status_icon = "\u2713" // CHECK MARK
     }
     // If a job fails do concluide "success" then the workflow isn't successful
