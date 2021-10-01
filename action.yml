@@ -27,6 +27,10 @@ inputs:
     descrtiption: 'Should the slack notification include individual job status and run times'
     required: true
     default: true
+  hide_successful_jobs:
+    description: Boolean to hide successful jobs when building the notification
+    required: false
+    default: false
 runs:
   using: 'node12'
   main: 'dist/index.js'

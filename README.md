@@ -14,6 +14,7 @@ This action will post workflow status notifications into your Slack channel. The
 | **icon_emoji** | _optional_ | Allows you to provide an emoji as the slack bot user image when posting notifications. Overrides the default image created with your webhook. _[Emoji Code Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)_
 | **icon_url** | _optional_ | Allows you to provide a URL for an image to use as the slack bot user image when posting notifications. Overrides the default image created with your webhook.
 | **include_jobs** | _optional_ | When set to `true`, individual job status and durations in the slack notification. When `false` only the event status and workflow status lines are included.
+| **hide_successful_jobs** | _optional_ | When set to `true`, jobs with success status will not be added to the notification jobs list.
 
 ## Usage
 To use this action properly, you should create a new `job` at the end of your workflow that `needs` all other jobs in the workflow. This ensures that this action is only run once all jobs in your workflow are complete.
